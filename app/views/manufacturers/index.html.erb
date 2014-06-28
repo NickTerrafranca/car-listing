@@ -1,8 +1,11 @@
+<h3>Available Manufacturers</h3>
 <h3></h3>
 <ul>
   <% @manufacturer.each do |m| %>
-    <li><%= m.name %></li>
-    <li><%= m.country %></li>
+    <li>Make: <%= m.name %></li>
+    <li>Country: <%= m.country %></li>
   <br>
   <%end%>
 </ul>
+<%= link_to 'Add Manufacturer to Inventory', new_manufacturer_path %>
+<!-- <%= link_to 'Add a Automobile to Inventory', cars_path %> -->
