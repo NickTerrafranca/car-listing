@@ -1,29 +1,33 @@
 class CarsController < ApplicationController
-
   def index
-    @car = Car.all
+    @car = Car.order('created_at DESC')
   end
 
   def new
-    @manufacturer = Manufacturer.all.map{ |u| [ u.name, u.id ] }
+    @manufacturer = Manufacturer.all.map { |u| [u.name, u.id] }
     @car = Car.new
   end
 
   def create
     @car = Car.new(car_params)
-    @manufacturer = Manufacturer.find(params['manufacturer_id'])
-    @car.manufacturer = @manufacturer
+    # binding.pry
     if @car.save
+      # binding.pry
       flash[:notice] = 'Successfully created...'
       redirect_to cars_path
     else
-      flash.now[:notice] = 'There was a problem saving your submission...'
-      render :new
+      # binding.pry
+      flash[:notice] = 'There was a problem saving your submission...'
+      redirect_to new_car_path
     end
   end
 
   private
+
   def car_params
-    params.require(:car).permit(:year, :model, :mileage, :color, :description, :manufacturer)
+    params.require(:car).permit(
+      :year, :model, :mileage, :color, :description,
+      :manufacturer_id
+    )
   end
 end
