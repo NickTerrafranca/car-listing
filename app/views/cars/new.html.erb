@@ -1,0 +1,50 @@
+<h3>Enter a Car to Add to Inventory</h3>
+<div>
+  <%= form_for @car do |f| %>
+
+    <%= f.label :year %>
+    <% if @car.errors[:year].any? %>
+      <%= @car.errors[:year][0] %>
+    <% end %>
+    <%= f.text_field :year%>
+
+    <br>
+      <%= select_tag(:manufacturer_id, options_for_select(@manufacturer)) %>
+    <br>
+
+    <%= f.label :model %>
+    <% if @car.errors[:model].any? %>
+      <%= @car.errors[:model][0] %>
+    <% end %>
+    <%= f.text_field :model %>
+
+    <br>
+
+    <%= f.label :mileage %>
+    <% if @car.errors[:mileage].any? %>
+      <%= @car.errors[:mileage][0] %>
+    <% end %>
+    <%= f.text_field :mileage %>
+
+    <br>
+
+    <%= f.label :color %>
+    <% if @car.errors[:color].any? %>
+      <%= @car.errors[:color][0] %>
+    <% end %>
+    <%= f.text_field :color %>
+
+    <br>
+
+    <%= f.label :description %>
+    <% if @car.errors[:description].any? %>
+      <%= @car.errors[:description][0] %>
+    <% end %>
+    <%= f.text_field :description %>
+
+    <br>
+
+    <%= f.submit 'Submit'%>
+
+  <%end%>
+</div>

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20140628191721) do
 
   create_table "cars", force: true do |t|
     t.integer  "year",            null: false
+    t.string   "model",           null: false
     t.string   "mileage",         null: false
     t.string   "color",           null: false
     t.text     "description"
