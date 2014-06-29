@@ -1,7 +1,6 @@
 class ManufacturersController < ApplicationController
-
   def index
-    @manufacturer = Manufacturer.order('name DESC')
+    @manufacturer = Manufacturer.order('name ASC')
   end
 
   def new
@@ -25,5 +24,4 @@ class ManufacturersController < ApplicationController
   def manufacturer_params
     params.require(:manufacturer).permit(:name, :country)
   end
-
 end
