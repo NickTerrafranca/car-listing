@@ -10,10 +10,13 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
+    # binding.pry
     if @car.save
+      # binding.pry
       flash[:notice] = 'Successfully created...'
       redirect_to cars_path
     else
+      # binding.pry
       flash[:notice] = 'There was a problem saving your submission...'
       redirect_to new_car_path
     end

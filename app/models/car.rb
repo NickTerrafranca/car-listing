@@ -1,7 +1,7 @@
 class Car < ActiveRecord::Base
   belongs_to :manufacturer
 
-  validates :year, numericality: { greater_than: 1919, less_than: 2015 }
+  validates :year, numericality: { greater_than: 1919, less_than: 2015 } #Time.now.year(+1)
   validates :year, presence: true
   validates :model, presence: true
   validates :mileage, presence: true
