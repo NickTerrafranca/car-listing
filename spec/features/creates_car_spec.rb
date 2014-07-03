@@ -19,7 +19,7 @@ feature 'creates a car listing', %q(
 
   scenario 'inserts valid input in all fields' do
     manufacturer = FactoryGirl.create(:manufacturer)
-    car = FactoryGirl.create(:car, manufacturer: manufacturer)
+    car = FactoryGirl.build(:car, manufacturer: manufacturer)
     visit new_car_path
     fill_in 'Year', with: car.year
     fill_in 'Model', with: car.model
@@ -38,7 +38,7 @@ feature 'creates a car listing', %q(
 
   scenario 'inserts valid input in required fields only' do
     manufacturer = FactoryGirl.create(:manufacturer)
-    car = FactoryGirl.create(:car, manufacturer: manufacturer)
+    car = FactoryGirl.build(:car, manufacturer: manufacturer)
     visit new_car_path
     fill_in 'Year', with: car.year
     fill_in 'Model', with: car.model
@@ -56,7 +56,7 @@ feature 'creates a car listing', %q(
 
   scenario 'inserts invalid year input' do
     manufacturer = FactoryGirl.create(:manufacturer)
-    car = FactoryGirl.create(:car, manufacturer: manufacturer)
+    car = FactoryGirl.build(:car, manufacturer: manufacturer)
     visit new_car_path
     fill_in 'Year', with: '1911'
     fill_in 'Model', with: car.model
@@ -73,7 +73,7 @@ feature 'creates a car listing', %q(
 
   scenario 'inserts invalid year input' do
     manufacturer = FactoryGirl.create(:manufacturer)
-    car = FactoryGirl.create(:car, manufacturer: manufacturer)
+    car = FactoryGirl.build(:car, manufacturer: manufacturer)
     visit new_car_path
     click_button 'Submit'
 
