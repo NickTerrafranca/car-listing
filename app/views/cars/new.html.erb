@@ -14,8 +14,7 @@
       <%= @car.errors[:manufacturer_id][0] %>
     <% end %>
     <%= f.select(:manufacturer_id, options_for_select(@manufacturer)) %>
-    OR
-    <%= link_to 'Add a Manufacturer', new_manufacturer_path%>
+    <%= link_to 'or Add a Manufacturer', new_manufacturer_path%>
     <br><br>
 
     <%= f.label :model %>
@@ -54,5 +53,5 @@
 
   <%end%>
 
-  <%= link_to 'Back to All Cars', cars_path%>
+  <%= link_to 'Back to All Cars', cars_path %>
 </div>
