@@ -1,0 +1,24 @@
+<h3>Enter a Manufacturer Description</h3>
+<div>
+  <%= form_for @manufacturer do |f| %>
+
+    <%= f.label :name%>
+    <% if @manufacturer.errors[:name].any? %>
+      <%= @manufacturer.errors[:name][0] %>
+    <% end %>
+    <%= f.text_field :name%>
+
+    <br>
+
+    <%= f.label :country%>
+    <% if @manufacturer.errors[:country].any? %>
+      <%= @manufacturer.errors[:country][0] %>
+    <% end %>
+    <%= f.text_field :country%>
+
+    <br>
+
+    <%= f.submit 'Submit'%>
+
+  <%end%>
+</div>

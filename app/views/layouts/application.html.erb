@@ -7,7 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav>
+  <%= link_to 'View all Automobiles', cars_path%>
+  |
+  <%= link_to 'Available Manufacturers', manufacturers_path%>
+  |
+  <%= link_to 'Add Manufacturer', new_manufacturer_path%>
+  |
+  <%= link_to 'Add Automobile', new_car_path %><br>
+</nav>
+<%= notice %>
 <%= yield %>
 
 </body>

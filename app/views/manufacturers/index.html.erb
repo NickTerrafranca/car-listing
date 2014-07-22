@@ -1,0 +1,8 @@
+<h3>Available Manufacturers</h3>
+<ul>
+  <% @manufacturer.each do |m| %>
+    <li>Make: <%= m.name %></li>
+    <li>Country: <%= m.country %></li>
+  <br>
+  <%end%>
+</ul>
