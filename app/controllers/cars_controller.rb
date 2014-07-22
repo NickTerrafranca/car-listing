@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+
   def index
     @car = Car.order('created_at DESC')
   end
